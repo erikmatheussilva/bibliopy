@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "titulo": "Think Python, 2nd Edition",
+    "autor": "Allen B. Downey",
+    "genero": "Programação e Tecnologia",
+    "ano": 2015,
+    "idioma": "Inglês",
+    "fonte": "Green Tea Press",
+    "arquivo": "pdfs/thinkpython2.pdf"
+  }
+]
