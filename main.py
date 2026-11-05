@@ -12,18 +12,24 @@ from PIL import ImageTk
 import pypdfium2 as pdfium
 
 
-class LivroPDFLocal:
-    # representa um livro do catálogo que possui um pdf no computador
+class Livro:
+    # guarda os dados comuns a qualquer tipo de livro
 
+    def __init__(self, titulo, autor, ano, genero):
+        self.titulo = titulo
+        self.autor = autor
+        self.ano = ano
+        self.genero = genero
+
+
+class LivroPDFLocal(Livro):
+    # representa um livro do catálogo que possui um pdf no computador
 
     def __init__(self, dados, pasta):
         # recebe um registro do json e a pasta onde está o catálogo
         # cada chave de dados corresponde a um campo em catalogo.json
+        super().__init__(dados["titulo"], dados["autor"], dados["ano"], dados["genero"])
         self.id = dados["id"]
-        self.titulo = dados["titulo"]
-        self.autor = dados["autor"]
-        self.genero = dados["genero"]
-        self.ano = dados["ano"]
         self.idioma = dados["idioma"]
         self.fonte = dados["fonte"]
         self.arquivo = pasta / dados["arquivo"]
